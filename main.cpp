@@ -61,8 +61,8 @@ public:
     {
         if(x1>x2 || y1>y2)
             return;
-        for(int i = x1; i<x2; i++)
-            for(int j = y1; j<y2; j++)
+        for(int i = x1; i<=x2; i++)
+            for(int j = y1; j<=y2; j++)
                 map[i][j].occupancy = 1;
     }
 
@@ -149,7 +149,7 @@ public:
             {
                 // success
                 get_path(goal_ptr, m);
-
+                return;
             }
 
             open_list.erase(cell);
@@ -257,8 +257,8 @@ int main() {
 
     int start_x = 7;
     int start_y = 5;
-    int goal_x = 14;
-    int goal_y = 13;
+    int goal_x = 17;
+    int goal_y = 3;
 
     Map map1(start_x,start_y,goal_x,goal_y);
 
